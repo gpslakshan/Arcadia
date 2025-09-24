@@ -1,8 +1,7 @@
-import GameCard from "@/features/home/components/GameCard";
 import apiClient from "@/services/api-client";
 import { useEffect, useState } from "react";
 
-const Home = () => {
+const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,17 +14,7 @@ const Home = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {games.map((game) => (
-        <GameCard key={game.id} game={game} />
-      ))}
-    </div>
-  );
+  return { games, loading, error };
 };
 
-export default Home;
+export default useGames;
