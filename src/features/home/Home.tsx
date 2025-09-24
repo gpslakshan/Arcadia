@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+
 import GameCard from "@/features/home/components/GameCard";
-import useGames from "@/features/home/hooks/useGames";
+import apiClient from "@/services/api-client";
 
 const Home = () => {
-  const { games, loading } = useGames();
+  const [games, setGames] = useState<Game[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    apiClient
+      .get<FetchGamesResponse>("/games")
+      .then((res) => setGames(res.data.results))
+      .catch((err) => toast.error(`Failed to fetch games: ${err.message}`))
+      .finally(() => setLoading(false));
+  }, []);
 
   if (loading) {
     return <p>Loading...</p>;
