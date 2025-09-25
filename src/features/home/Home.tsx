@@ -3,6 +3,7 @@ import { toast } from "sonner";
 
 import GameCard from "@/features/home/components/GameCard";
 import apiClient from "@/services/api-client";
+import GameCardLoadingSkeleton from "./components/GameCardLoadingSkeleton";
 
 const Home = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -17,7 +18,13 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {Array.from({ length: 32 }).map((_, index) => (
+          <GameCardLoadingSkeleton key={index} />
+        ))}
+      </div>
+    );
   }
 
   return (
