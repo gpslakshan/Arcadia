@@ -4,18 +4,26 @@ import { toast } from "sonner";
 import apiClient from "@/services/api-client";
 import GameCard from "./components/GameCard";
 import GameCardLoadingSkeleton from "./components/GameCardLoadingSkeleton";
+import useGameQueryStore from "@/stores/game-query";
 
 const Home = () => {
   const [games, setGames] = useState<Game[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
+  const { genreId } = useGameQueryStore();
 
   useEffect(() => {
+    setLoading(true);
+
     apiClient
-      .get<FetchGamesResponse>("/games")
+      .get<FetchGamesResponse>("/games", {
+        params: {
+          genres: genreId,
+        },
+      })
       .then((res) => setGames(res.data.results))
       .catch((err) => toast.error(`Failed to fetch games: ${err.message}`))
       .finally(() => setLoading(false));
-  }, []);
+  }, [genreId]);
 
   if (loading) {
     return (
