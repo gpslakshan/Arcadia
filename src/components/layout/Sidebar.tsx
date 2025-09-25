@@ -1,4 +1,4 @@
-import GenreList from "@/features/games/components/GenreList";
+import GenreList from "@/games/components/GenreList";
 
 const Sidebar = () => {
   return (

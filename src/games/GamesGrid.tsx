@@ -6,7 +6,7 @@ import GameCard from "./components/GameCard";
 import GameCardLoadingSkeleton from "./components/GameCardLoadingSkeleton";
 import useGameQueryStore from "@/stores/game-query";
 
-const Home = () => {
+const GamesGrid = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { genreId } = useGameQueryStore();
@@ -44,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GamesGrid;
