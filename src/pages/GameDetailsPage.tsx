@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
 
 const GameDetailsPage = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
 
-  return <div className="h-full">Details for game {id}</div>;
+  return <div className="h-full mt-15">Details for game {slug}</div>;
 };
 
 export default GameDetailsPage;

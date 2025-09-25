@@ -11,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Link to={`game/${game.id}`}>
+    <Link to={`games/${game.slug}`}>
       <Card className="py-0 overflow-hidden gap-0">
         {/* Image Section */}
         <img
