@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 
-import GamesGrid from "./games/GamesGrid";
-import GameDetails from "./games/GameDetails";
+import HomePage from "./pages/HomePage";
+import GameDetailsPage from "./pages/GameDetailsPage";
 import HomeLayout from "./components/layout/HomeLayout";
 import GameDetailsLayout from "./components/layout/GameDetailsLayout";
 
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/", // Home route
-        element: <GamesGrid />,
+        element: <HomePage />,
       },
     ],
   },
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/game/:id", // Game details route
-        element: <GameDetails />,
+        element: <GameDetailsPage />,
       },
     ],
   },

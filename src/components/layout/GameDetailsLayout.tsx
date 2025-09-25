@@ -5,7 +5,7 @@ const GameDetailsLayout = () => {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <main className="flex-1 p-4 overflow-y-auto">
+      <main className="mt-15 flex-1 p-4 overflow-y-auto">
         <Outlet /> {/* Page content will render here */}
       </main>
     </div>

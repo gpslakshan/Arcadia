@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import apiClient from "@/services/api-client";
-import GameCard from "./components/GameCard";
-import GameCardLoadingSkeleton from "./components/GameCardLoadingSkeleton";
 import useGameQueryStore from "@/stores/game-query";
+import GameCardLoadingSkeleton from "./GameCardLoadingSkeleton";
+import GameCard from "./GameCard";
 
 const GamesGrid = () => {
   const [games, setGames] = useState<Game[]>([]);
