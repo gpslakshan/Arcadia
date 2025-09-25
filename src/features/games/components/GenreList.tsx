@@ -1,5 +1,6 @@
 import apiClient from "@/services/api-client";
 import { useEffect, useState } from "react";
+import GenreListItem from "./GenreListItem";
 
 const GenreList = () => {
   const [genres, setGenres] = useState<Genre[]>([]);
@@ -21,11 +22,11 @@ const GenreList = () => {
   return (
     <div>
       {error && <p className="text-red-400">{error}</p>}
-      <ul>
+      <div className="py-3 px-2 space-y-2">
         {genres.map((genre) => (
-          <li key={genre.id}>{genre.name}</li>
+          <GenreListItem key={genre.id} genre={genre} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const HomeLayout = () => {
       <Navbar />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 mt-15 ml-0 lg:ml-[220px] xl:ml-[250px] p-4 overflow-y-auto">
+        <main className="flex-1 mt-15 p-4 overflow-y-auto">
           <Outlet /> {/* Page content will render here */}
         </main>
       </div>
