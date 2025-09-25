@@ -73,3 +73,10 @@ interface FetchGenresResponse {
   previous: string | null;
   results: Genre[];
 }
+
+interface FetchPlatformsResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Platform[];
+}

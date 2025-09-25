@@ -6,7 +6,8 @@ interface Props {
 }
 
 const GenreListItem = ({ genre }: Props) => {
-  const { genreId: selectedGenreId, setGenreId } = useGameQueryStore();
+  const selectedGenreId = useGameQueryStore((s) => s.genreId);
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   return (
     <div className="flex items-center gap-2">
