@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import imagePlaceholder from "@/assets/no-image-placeholder.webp";
 import { Link } from "react-router";
 import PlatformIconList from "./PlatformIconList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   game: Game;
@@ -20,8 +21,11 @@ const GameCard = ({ game }: Props) => {
 
         {/* Content Section */}
         <div className="px-2 py-4">
-          <h2 className="text-lg font-bold truncate">{game.name}</h2>
-          <PlatformIconList platforms={game.parent_platforms} />
+          <h2 className="text-xl font-bold truncate">{game.name}</h2>
+          <div className="mt-2 flex justify-between items-center">
+            <PlatformIconList platforms={game.parent_platforms} />
+            <CriticScore score={game.metacritic} />
+          </div>
         </div>
       </Card>
     </Link>

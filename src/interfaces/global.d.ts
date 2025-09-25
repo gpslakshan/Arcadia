@@ -21,7 +21,7 @@ interface Game {
   reviews_text_count: string;
   added: number;
   added_by_status: Record<string, number>;
-  metacritic: number | null;
+  metacritic: number;
   playtime: number;
   suggestions_count: number;
   updated: string;

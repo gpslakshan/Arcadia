@@ -29,12 +29,12 @@ interface Props {
 
 const PlatformIconList = ({ platforms }: Props) => {
   return (
-    <div className="mt-2 flex gap-1">
+    <div className="flex gap-1">
       {platforms.map(({ platform }) => {
         const Icon = iconMap[platform.slug];
         return (
           Icon && (
-            <Icon key={platform.id} className="text-sm text-muted-foreground" />
+            <Icon key={platform.id} className="text-lg text-muted-foreground" />
           )
         );
       })}
