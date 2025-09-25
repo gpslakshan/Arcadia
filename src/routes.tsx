@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
-import Home from "./features/home/Home";
-import GameDetails from "./features/game-details/GameDetails";
+
+import Home from "./features/games/Home";
+import GameDetails from "./features/games/GameDetails";
 import HomeLayout from "./components/layout/HomeLayout";
 import GameDetailsLayout from "./components/layout/GameDetailsLayout";
 

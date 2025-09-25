@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-import GameCard from "@/features/home/components/GameCard";
 import apiClient from "@/services/api-client";
+import GameCard from "./components/GameCard";
 import GameCardLoadingSkeleton from "./components/GameCardLoadingSkeleton";
 
 const Home = () => {
