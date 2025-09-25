@@ -56,3 +56,20 @@ interface Requirements {
   minimum: string;
   recommended: string;
 }
+
+// Represents a single genre
+interface Genre {
+  id: number;
+  name: string;
+  slug: string;
+  games_count: number;
+  image_background: string;
+}
+
+// Represents the paginated response from the API
+interface FetchGenresResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Genre[];
+}
