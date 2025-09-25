@@ -6,7 +6,7 @@ interface Props {
 }
 
 const GenreListItem = ({ genre }: Props) => {
-  const { setGenreId } = useGameQueryStore();
+  const { genreId: selectedGenreId, setGenreId } = useGameQueryStore();
 
   return (
     <div className="flex items-center gap-2">
@@ -15,8 +15,16 @@ const GenreListItem = ({ genre }: Props) => {
         className="h-8 w-8 rounded-md"
       />
       <p
-        className="text-lg cursor-pointer hover:underline"
-        onClick={() => setGenreId(genre.id)}
+        className={`cursor-pointer hover:underline ${
+          selectedGenreId === genre.id ? "text-xl font-bold" : "text-lg"
+        }`}
+        onClick={() => {
+          if (genre.id === selectedGenreId) {
+            setGenreId(null);
+          } else {
+            setGenreId(genre.id);
+          }
+        }}
       >
         {genre.name}
       </p>
