@@ -26,6 +26,7 @@ interface Game {
   suggestions_count: number;
   updated: string;
   esrb_rating: EsrbRating | null;
+  parent_platforms: { platform: Platform }[];
   platforms: GamePlatform[];
 }
 
