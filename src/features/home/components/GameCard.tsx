@@ -3,6 +3,7 @@ import imagePlaceholder from "@/assets/no-image-placeholder.webp";
 import { Link } from "react-router";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
+import { getCroppedImageURL } from "@/lib/utils";
 
 interface Props {
   game: Game;
@@ -14,9 +15,9 @@ const GameCard = ({ game }: Props) => {
       <Card className="py-0 overflow-hidden gap-0">
         {/* Image Section */}
         <img
-          src={game.background_image || imagePlaceholder}
+          src={getCroppedImageURL(game.background_image) || imagePlaceholder}
           alt={game.name}
-          className="h-48 w-full object-cover"
+          className="h-60 w-full object-cover"
         />
 
         {/* Content Section */}
