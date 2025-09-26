@@ -24,7 +24,7 @@ const GameCard = ({ game }: Props) => {
         {/* Content Section */}
         <div className="px-2 py-4">
           <div className="mb-2 flex justify-between items-center">
-            <PlatformIconList platforms={game.parent_platforms} />
+            <PlatformIconList platforms={game.parent_platforms || []} />
             <CriticScore score={game.metacritic} />
           </div>
           <div className="flex gap-2 items-center">

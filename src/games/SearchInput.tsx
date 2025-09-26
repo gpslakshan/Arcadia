@@ -20,7 +20,7 @@ const SearchInput = () => {
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
       <Input
         type="search"
-        placeholder="Search..."
+        placeholder="Search games..."
         className="pl-9" // add padding so text doesn’t overlap icon
         onChange={(e) => setLocalSearch(e.target.value)}
       />
