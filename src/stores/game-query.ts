@@ -6,7 +6,7 @@ interface GameQuery {
   genreName: string | null;
   platformId: number | null;
   platformName: string | null;
-  searchText: string | null;
+  searchText: string;
   sortOrder: string | null;
 }
 
@@ -23,7 +23,7 @@ const initialGameQuery: GameQuery = {
   genreName: null,
   platformId: null,
   platformName: null,
-  searchText: null,
+  searchText: "",
   sortOrder: null,
 };
 

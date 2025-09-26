@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 
 const SearchInput = () => {
   const [localSearch, setLocalSearch] = useState("");
+  const searchText = useGameQueryStore((s) => s.gameQuery.searchText);
   const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setGameQuery({ searchText: localSearch || null });
+      // Only update if value actually changed
+      if (searchText !== localSearch) {
+        setGameQuery({ searchText: localSearch });
+      }
     }, 500); // debounce delay
 
     return () => clearTimeout(timer);
