@@ -19,6 +19,7 @@ const GamesGrid = () => {
         params: {
           genres: gameQuery.genreId,
           platforms: gameQuery.platformId,
+          ordering: gameQuery.sortOrder,
         },
       })
       .then((res) => setGames(res.data.results))
