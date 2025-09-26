@@ -14,7 +14,7 @@ const PlatformSelector = () => {
   const [platforms, setPlatforms] = useState<Platform[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const setPlatformId = useGameQueryStore((s) => s.setPlatformId);
+  const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
 
   useEffect(() => {
     apiClient
@@ -24,9 +24,11 @@ const PlatformSelector = () => {
       .finally(() => setLoading(false));
   }, []);
 
+  console.log("Render PlatformSelector");
+
   const handlePlatformChange = (value: string) => {
     const selectedPlatformId = parseInt(value);
-    setPlatformId(selectedPlatformId);
+    setGameQuery({ platformId: selectedPlatformId });
   };
 
   if (error) {

@@ -9,7 +9,7 @@ import GameCard from "./GameCard";
 const GamesGrid = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const { genreId, platformId } = useGameQueryStore();
+  const { gameQuery } = useGameQueryStore();
 
   useEffect(() => {
     setLoading(true);
@@ -17,14 +17,14 @@ const GamesGrid = () => {
     apiClient
       .get<FetchGamesResponse>("/games", {
         params: {
-          genres: genreId,
-          platforms: platformId,
+          genres: gameQuery.genreId,
+          platforms: gameQuery.platformId,
         },
       })
       .then((res) => setGames(res.data.results))
       .catch((err) => toast.error(`Failed to fetch games: ${err.message}`))
       .finally(() => setLoading(false));
-  }, [genreId, platformId]);
+  }, [gameQuery]);
 
   if (loading) {
     return (

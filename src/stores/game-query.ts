@@ -1,38 +1,38 @@
 import { create } from "zustand";
 
-// 1. Define an interface to represent the shape of our store
-interface GameQueryStore {
+// 1. Define the shape of the query object
+interface GameQuery {
   genreId: number | null;
   platformId: number | null;
   searchText: string | null;
   sortOrder: string | null;
-  setGenreId: (id: number | null) => void;
-  setPlatformId: (id: number | null) => void;
-  setSearchText: (text: string | null) => void;
-  setSortOrder: (order: string | null) => void;
+}
+
+// 2. Define the store shape
+interface GameQueryStore {
+  gameQuery: GameQuery;
+  setGameQuery: (query: Partial<GameQuery>) => void;
   reset: () => void;
 }
 
-// 2. Create zustand store
-const useGameQueryStore = create<GameQueryStore>((set) => ({
-  // Initial state
+// 3. Define initial state (DRY)
+const initialGameQuery: GameQuery = {
   genreId: null,
   platformId: null,
   searchText: null,
   sortOrder: null,
+};
 
-  // Actions to update the state
-  setGenreId: (id: number | null) => set({ genreId: id }),
-  setPlatformId: (id: number | null) => set({ platformId: id }),
-  setSearchText: (text: string | null) => set({ searchText: text }),
-  setSortOrder: (order: string | null) => set({ sortOrder: order }),
-  reset: () =>
-    set({
-      genreId: null,
-      platformId: null,
-      searchText: null,
-      sortOrder: null,
-    }),
+// 4. Create Zustand store
+const useGameQueryStore = create<GameQueryStore>((set) => ({
+  gameQuery: initialGameQuery,
+
+  setGameQuery: (query) =>
+    set((state) => ({
+      gameQuery: { ...state.gameQuery, ...query },
+    })),
+
+  reset: () => set({ gameQuery: initialGameQuery }),
 }));
 
 export default useGameQueryStore;

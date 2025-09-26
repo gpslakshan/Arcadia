@@ -6,8 +6,10 @@ interface Props {
 }
 
 const GenreListItem = ({ genre }: Props) => {
-  const selectedGenreId = useGameQueryStore((s) => s.genreId);
-  const setGenreId = useGameQueryStore((s) => s.setGenreId);
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
+
+  console.log("Render GenreListItem");
 
   return (
     <div className="flex items-center gap-2">
@@ -21,9 +23,9 @@ const GenreListItem = ({ genre }: Props) => {
         }`}
         onClick={() => {
           if (genre.id === selectedGenreId) {
-            setGenreId(null);
+            setGameQuery({ genreId: null });
           } else {
-            setGenreId(genre.id);
+            setGameQuery({ genreId: genre.id });
           }
         }}
       >
