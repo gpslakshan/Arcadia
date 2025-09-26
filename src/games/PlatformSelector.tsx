@@ -18,7 +18,7 @@ const PlatformSelector = () => {
 
   useEffect(() => {
     apiClient
-      .get<FetchPlatformsResponse>("/platforms")
+      .get<FetchPlatformsResponse>("/platforms/lists/parents")
       .then((res) => setPlatforms(res.data.results))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));

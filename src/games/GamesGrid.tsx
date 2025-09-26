@@ -18,7 +18,7 @@ const GamesGrid = () => {
       .get<FetchGamesResponse>("/games", {
         params: {
           genres: gameQuery.genreId,
-          platforms: gameQuery.platformId,
+          parent_platforms: gameQuery.platformId,
           ordering: gameQuery.sortOrder,
           search: gameQuery.searchText,
         },
