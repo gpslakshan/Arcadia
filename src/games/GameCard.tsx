@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import { getCroppedImageURL } from "@/lib/utils";
+import Emoji from "./Emoji";
 
 interface Props {
   game: Game;
@@ -26,7 +27,10 @@ const GameCard = ({ game }: Props) => {
             <PlatformIconList platforms={game.parent_platforms} />
             <CriticScore score={game.metacritic} />
           </div>
-          <h2 className="text-xl font-bold truncate">{game.name}</h2>
+          <div className="flex gap-2 items-center">
+            <h2 className="text-xl font-bold truncate">{game.name}</h2>
+            <Emoji rating={game.rating_top} />
+          </div>
         </div>
       </Card>
     </Link>
