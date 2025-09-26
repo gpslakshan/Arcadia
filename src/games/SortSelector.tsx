@@ -25,7 +25,7 @@ const SortSelector = () => {
 
   return (
     <Select onValueChange={handleSortOrderChange}>
-      <SelectTrigger className="w-[220px]">
+      <SelectTrigger className="w-full md:w-[220px]">
         <SelectValue placeholder="Order by: Relevance" />
       </SelectTrigger>
       <SelectContent>

@@ -35,7 +35,7 @@ const PlatformSelector = () => {
 
   return (
     <Select disabled={loading} onValueChange={handlePlatformChange}>
-      <SelectTrigger className="w-[200px] flex items-center justify-between">
+      <SelectTrigger className="w-full md:w-[200px] flex items-center justify-between">
         {loading ? (
           <div className="flex items-center space-x-2">
             <Loader2 className="h-4 w-4 animate-spin" />

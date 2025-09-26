@@ -1,6 +1,7 @@
 import GamesGrid from "@/games/GamesGrid";
 import GenreList from "@/games/GenreList";
 import PlatformSelector from "@/games/PlatformSelector";
+import SearchInput from "@/games/SearchInput";
 import SortSelector from "@/games/SortSelector";
 
 const HomePage = () => {
@@ -10,7 +11,8 @@ const HomePage = () => {
         <GenreList />
       </div>
       <main className="mt-15 p-4 flex-1 flex flex-col gap-5 overflow-y-auto">
-        <div className="flex gap-3">
+        <div className="flex flex-col md:flex-row gap-3 md:items-center">
+          <SearchInput />
           <PlatformSelector />
           <SortSelector />
         </div>
