@@ -9,8 +9,6 @@ const GenreListItem = ({ genre }: Props) => {
   const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
   const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
 
-  console.log("Render GenreListItem");
-
   return (
     <div className="flex items-center gap-2">
       <img

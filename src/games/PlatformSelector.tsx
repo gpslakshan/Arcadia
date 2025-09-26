@@ -24,8 +24,6 @@ const PlatformSelector = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  console.log("Render PlatformSelector");
-
   const handlePlatformChange = (value: string) => {
     const selectedPlatformId = parseInt(value);
     setGameQuery({ platformId: selectedPlatformId });
@@ -37,7 +35,7 @@ const PlatformSelector = () => {
 
   return (
     <Select disabled={loading} onValueChange={handlePlatformChange}>
-      <SelectTrigger className="w-[220px] flex items-center justify-between">
+      <SelectTrigger className="w-[200px] flex items-center justify-between">
         {loading ? (
           <div className="flex items-center space-x-2">
             <Loader2 className="h-4 w-4 animate-spin" />
