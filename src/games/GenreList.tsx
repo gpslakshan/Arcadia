@@ -27,9 +27,10 @@ const GenreList = () => {
   }
 
   return (
-    <div>
+    <div className="py-3 px-2">
       {error && <p className="text-red-400">{error}</p>}
-      <div className="py-3 px-2 space-y-2">
+      <h1 className="text-2xl font-bold mb-5">Genres</h1>
+      <div className="space-y-2">
         {genres.map((genre) => (
           <GenreListItem key={genre.id} genre={genre} />
         ))}

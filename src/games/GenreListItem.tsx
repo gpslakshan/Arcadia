@@ -13,11 +13,13 @@ const GenreListItem = ({ genre }: Props) => {
     <div className="flex items-center gap-2">
       <img
         src={getCroppedImageURL(genre.image_background)!}
-        className="h-8 w-8 rounded-md"
+        className="h-8 w-8 rounded-md object-cover"
       />
       <p
         className={`cursor-pointer hover:underline ${
-          selectedGenreId === genre.id ? "text-xl font-bold" : "text-lg"
+          selectedGenreId === genre.id
+            ? "text-lg underline font-bold"
+            : "text-base"
         }`}
         onClick={() => {
           if (genre.id === selectedGenreId) {
