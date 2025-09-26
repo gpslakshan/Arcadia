@@ -22,11 +22,11 @@ const GameCard = ({ game }: Props) => {
 
         {/* Content Section */}
         <div className="px-2 py-4">
-          <h2 className="text-xl font-bold truncate">{game.name}</h2>
-          <div className="mt-2 flex justify-between items-center">
+          <div className="mb-2 flex justify-between items-center">
             <PlatformIconList platforms={game.parent_platforms} />
             <CriticScore score={game.metacritic} />
           </div>
+          <h2 className="text-xl font-bold truncate">{game.name}</h2>
         </div>
       </Card>
     </Link>

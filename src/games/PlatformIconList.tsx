@@ -34,7 +34,10 @@ const PlatformIconList = ({ platforms }: Props) => {
         const Icon = iconMap[platform.slug];
         return (
           Icon && (
-            <Icon key={platform.id} className="text-lg text-muted-foreground" />
+            <Icon
+              key={platform.id}
+              className="text-base text-muted-foreground"
+            />
           )
         );
       })}

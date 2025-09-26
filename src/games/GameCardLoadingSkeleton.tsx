@@ -9,11 +9,11 @@ const GameCardLoadingSkeleton = () => {
 
       {/* Content Section */}
       <div className="px-2 py-4">
-        <Skeleton className="h-6 w-full" />
-        <div className="mt-2 flex justify-between items-center">
+        <div className="mb-2 flex justify-between items-center">
           <Skeleton className="h-5 w-[120px]" />
           <Skeleton className="h-5 w-8" />
         </div>
+        <Skeleton className="h-6 w-full" />
       </div>
     </Card>
   );

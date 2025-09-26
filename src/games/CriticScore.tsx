@@ -10,14 +10,18 @@ const CriticScore = ({ score }: Props) => {
   if (!score) return null;
 
   if (score >= 75) {
-    colorClass = "bg-green-100 text-green-800"; // good score
+    colorClass = "border-green-500 text-green-500"; // good score
   } else if (score >= 50) {
-    colorClass = "bg-yellow-100 text-yellow-800"; // average score
+    colorClass = "border-yellow-500 text-yellow-500"; // average score
   } else {
-    colorClass = "bg-red-100 text-red-800"; // poor score
+    colorClass = "border-red-500 text-red-500"; // poor score
   }
 
-  return <Badge className={colorClass}>{score}</Badge>;
+  return (
+    <Badge className={`text-xs font-medium ${colorClass}`} variant="outline">
+      {score}
+    </Badge>
+  );
 };
 
 export default CriticScore;
