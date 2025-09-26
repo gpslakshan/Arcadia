@@ -3,7 +3,9 @@ import { create } from "zustand";
 // 1. Define the shape of the query object
 interface GameQuery {
   genreId: number | null;
+  genreName: string | null;
   platformId: number | null;
+  platformName: string | null;
   searchText: string | null;
   sortOrder: string | null;
 }
@@ -18,7 +20,9 @@ interface GameQueryStore {
 // 3. Define initial state (DRY)
 const initialGameQuery: GameQuery = {
   genreId: null,
+  genreName: null,
   platformId: null,
+  platformName: null,
   searchText: null,
   sortOrder: null,
 };

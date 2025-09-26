@@ -1,3 +1,4 @@
+import GameHeading from "@/games/GameHeading";
 import GamesGrid from "@/games/GamesGrid";
 import GenreList from "@/games/GenreList";
 import PlatformSelector from "@/games/PlatformSelector";
@@ -16,6 +17,7 @@ const HomePage = () => {
           <PlatformSelector />
           <SortSelector />
         </div>
+        <GameHeading />
         <GamesGrid />
       </main>
     </div>

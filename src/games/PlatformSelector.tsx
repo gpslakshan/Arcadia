@@ -26,7 +26,12 @@ const PlatformSelector = () => {
 
   const handlePlatformChange = (value: string) => {
     const selectedPlatformId = parseInt(value);
-    setGameQuery({ platformId: selectedPlatformId });
+    setGameQuery({
+      platformId: selectedPlatformId,
+      platformName: platforms.find(
+        (platform) => platform.id === selectedPlatformId
+      )?.name,
+    });
   };
 
   if (error) {

@@ -21,9 +21,9 @@ const GenreListItem = ({ genre }: Props) => {
         }`}
         onClick={() => {
           if (genre.id === selectedGenreId) {
-            setGameQuery({ genreId: null });
+            setGameQuery({ genreId: null, genreName: null });
           } else {
-            setGameQuery({ genreId: genre.id });
+            setGameQuery({ genreId: genre.id, genreName: genre.name });
           }
         }}
       >
