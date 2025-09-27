@@ -11,6 +11,7 @@ interface Game {
   id: number;
   slug: string;
   name: string;
+  description_raw: string;
   released: string | null;
   tba: boolean;
   background_image: string | null;
@@ -28,6 +29,8 @@ interface Game {
   esrb_rating: EsrbRating | null;
   parent_platforms: { platform: Platform }[];
   platforms: GamePlatform[];
+  genres: Genre[];
+  publishers: Publisher[];
 }
 
 // ESRB Rating
@@ -86,69 +89,23 @@ interface FetchPlatformsResponse {
   results: Platform[];
 }
 
-interface DetailedGame {
+// 1. Interface for the 'data' object (video resolutions)
+interface VideoData {
+  480: string; // The keys are strings representing the resolution
+  max: string;
+}
+
+// 2. Interface for a single item in the 'results' array
+interface VideoItem {
   id: number;
-  slug: string;
   name: string;
-  name_original: string;
-  description: string;
-  description_raw: string;
-  metacritic: number;
-  metacritic_platforms: {
-    metascore: number;
-    url: string;
-  }[];
-  released: string; // ISO date string
-  tba: boolean;
-  updated: string; // ISO datetime string
-  background_image: string;
-  background_image_additional: string;
-  website: string;
-  rating: number;
-  rating_top: number;
-  ratings: Record<string, unknown>;
-  reactions: Record<string, unknown>;
-  added: number;
-  added_by_status: Record<string, unknown>;
-  playtime: number;
-  screenshots_count: number;
-  movies_count: number;
-  creators_count: number;
-  achievements_count: number;
-  parent_achievements_count: string;
-  reddit_url: string;
-  reddit_name: string;
-  reddit_description: string;
-  reddit_logo: string;
-  reddit_count: number;
-  twitch_count: string;
-  youtube_count: string;
-  reviews_text_count: string;
-  ratings_count: number;
-  suggestions_count: number;
-  alternative_names: string[];
-  metacritic_url: string;
-  parents_count: number;
-  additions_count: number;
-  game_series_count: number;
-  esrb_rating: {
-    id: number;
-    slug: string;
-    name: string;
-  };
-  genres: Genre[];
-  publishers: Publisher[];
-  parent_platforms: { platform: Platform }[];
-  platforms: {
-    platform: {
-      id: number;
-      slug: string;
-      name: string;
-    };
-    released_at: string;
-    requirements: {
-      minimum: string;
-      recommended: string;
-    };
-  }[];
+  preview: string;
+  data: VideoData; // Use the interface we defined above
+}
+
+interface FetchGameTrailerResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: VideoItem[]; // An array of the VideoItem interface
 }
