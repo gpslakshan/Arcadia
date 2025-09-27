@@ -3,7 +3,7 @@ import PlatformsListItem from "./PlatformsListItem";
 
 const PlatformsList = () => {
   return (
-    <div className="py-3 px-2">
+    <div className="py-3 px-2 mb-20">
       <h1 className="text-2xl font-bold mb-5">Platforms</h1>
       <div className="space-y-3">
         {platforms.map((platform) => (

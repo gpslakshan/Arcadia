@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
 
 import apiClient from "@/services/api-client";
 import useGameQueryStore from "@/stores/game-query";
@@ -9,6 +8,7 @@ import GameCard from "./GameCard";
 const GamesGrid = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const { gameQuery } = useGameQueryStore();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const GamesGrid = () => {
         },
       })
       .then((res) => setGames(res.data.results))
-      .catch((err) => toast.error(`Failed to fetch games: ${err.message}`))
+      .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, [gameQuery]);
 
@@ -36,6 +36,10 @@ const GamesGrid = () => {
         ))}
       </div>
     );
+  }
+
+  if (error) {
+    return <p className="text-red-400">{error}</p>;
   }
 
   return (
