@@ -17,6 +17,7 @@ const sortOrders = [
 ];
 
 const SortSelector = () => {
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
 
   const handleSortOrderChange = (value: string) => {
@@ -24,7 +25,10 @@ const SortSelector = () => {
   };
 
   return (
-    <Select onValueChange={handleSortOrderChange}>
+    <Select
+      onValueChange={handleSortOrderChange}
+      defaultValue={sortOrder ?? "-relevance"}
+    >
       <SelectTrigger className="w-full md:w-[220px]">
         <SelectValue placeholder="Order by: Relevance" />
       </SelectTrigger>
