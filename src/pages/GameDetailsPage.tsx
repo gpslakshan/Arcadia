@@ -1,5 +1,6 @@
 import { fetchGameDetails } from "@/api/games";
 import ExpandableText from "@/components/shared/ExpandableText";
+import GameAttributes from "@/games/GameAttributes";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 
@@ -27,6 +28,7 @@ const GameDetailsPage = () => {
     <div className="h-full mt-15 p-5">
       <h1 className="text-5xl font-extrabold mb-5">{game.name}</h1>
       <ExpandableText>{game.description_raw}</ExpandableText>
+      <GameAttributes game={game} />
     </div>
   );
 };

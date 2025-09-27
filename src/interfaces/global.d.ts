@@ -66,6 +66,11 @@ interface Genre {
   image_background: string;
 }
 
+interface Publisher {
+  id: number;
+  name: string;
+}
+
 // Represents the paginated response from the API
 interface FetchGenresResponse {
   count: number;
@@ -131,6 +136,9 @@ interface DetailedGame {
     slug: string;
     name: string;
   };
+  genres: Genre[];
+  publishers: Publisher[];
+  parent_platforms: { platform: Platform }[];
   platforms: {
     platform: {
       id: number;
