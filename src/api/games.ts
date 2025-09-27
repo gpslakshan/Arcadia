@@ -16,3 +16,8 @@ export async function fetchGames(params: {
   });
   return res.data; // Return the full response, not just results
 }
+
+export async function fetchGameDetails(slug: string): Promise<DetailedGame> {
+  const res = await api.get(`/games/${slug}`);
+  return res.data;
+}
