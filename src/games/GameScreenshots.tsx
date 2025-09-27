@@ -1,5 +1,6 @@
 import { fetchGameScreenshots } from "@/api/games";
 import { useQuery } from "@tanstack/react-query";
+import { Loader2Icon } from "lucide-react";
 
 interface Props {
   slug: string;
@@ -16,7 +17,7 @@ const GameScreenshots = ({ slug }: Props) => {
   });
 
   if (isLoading) {
-    return <p>Screenshots Loading...</p>;
+    return <Loader2Icon className="animate-spin" />;
   }
 
   if (error) {
