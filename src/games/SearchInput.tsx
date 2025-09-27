@@ -4,9 +4,9 @@ import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const SearchInput = () => {
-  const [localSearch, setLocalSearch] = useState("");
   const searchText = useGameQueryStore((s) => s.gameQuery.searchText);
   const setGameQuery = useGameQueryStore((s) => s.setGameQuery);
+  const [localSearch, setLocalSearch] = useState(searchText);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +26,7 @@ const SearchInput = () => {
         type="search"
         placeholder="Search games..."
         className="pl-9" // add padding so text doesn’t overlap icon
+        value={localSearch}
         onChange={(e) => setLocalSearch(e.target.value)}
       />
     </div>
