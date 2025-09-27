@@ -43,6 +43,16 @@ export const platforms = [
     slug: "mac",
   },
   {
+    id: 6,
+    name: "Linux",
+    slug: "linux",
+  },
+  {
+    id: 7,
+    name: "Nintendo",
+    slug: "nintendo",
+  },
+  {
     id: 14,
     name: "Web",
     slug: "web",
