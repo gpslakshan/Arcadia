@@ -12,15 +12,14 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Link to={`games/${game.slug}`}>
-      <Card className="py-0 overflow-hidden gap-0">
+    <Link to={`/games/${game.slug}`}>
+      <Card className="py-0 overflow-hidden gap-0 transition-transform duration-200 hover:scale-105 hover:shadow-lg">
         {/* Image Section */}
         <img
           src={getCroppedImageURL(game.background_image) || imagePlaceholder}
           alt={game.name}
           className="h-60 w-full object-cover"
         />
-
         {/* Content Section */}
         <div className="px-2 py-4">
           <div className="mb-2 flex justify-between items-center">

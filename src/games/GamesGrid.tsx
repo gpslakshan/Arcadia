@@ -74,6 +74,7 @@ const GamesGrid = () => {
           <p>🎮 You've seen all the games! Time to start playing! 🎮</p>
         </div>
       }
+      className="overflow-visible!"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {allGames.map((game) => (
