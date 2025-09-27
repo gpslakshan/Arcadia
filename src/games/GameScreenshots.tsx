@@ -28,7 +28,7 @@ const GameScreenshots = ({ slug }: Props) => {
   }
 
   return (
-    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       {screenshots.map((screenshot, index) => (
         <img key={index} src={screenshot.image} alt={`screenshot-${index}`} />
       ))}

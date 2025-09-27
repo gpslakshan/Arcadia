@@ -15,7 +15,7 @@ const ExpandableText = ({ children }: Props) => {
   const displayText = expanded ? children : children.slice(0, maxChars);
 
   return (
-    <div className="">
+    <div>
       <p className="inline">
         {displayText}
         {!expanded && isLongText && "..."}

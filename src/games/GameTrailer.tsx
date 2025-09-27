@@ -30,12 +30,7 @@ const GameTrailer = ({ slug }: Props) => {
   const firsTrailer = trailers[0];
 
   return (
-    <video
-      src={firsTrailer.data[480]}
-      poster={firsTrailer.preview}
-      controls
-      className="mt-12"
-    />
+    <video src={firsTrailer.data[480]} poster={firsTrailer.preview} controls />
   );
 };
 

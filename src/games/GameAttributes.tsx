@@ -3,12 +3,12 @@ import { platformIconMap } from "@/constants/platforms";
 import CriticScore from "./CriticScore";
 
 interface Props {
-  game: DetailedGame;
+  game: Game;
 }
 
 const GameAttributes = ({ game }: Props) => {
   return (
-    <dl className="mt-10 grid grid-cols-2 gap-x-2 gap-y-5">
+    <dl className="grid grid-cols-2 gap-x-2 gap-y-5">
       <DefinitionItem term="Platforms">
         {game.parent_platforms?.map(({ platform }) => {
           const Icon = platformIconMap[platform.slug];
