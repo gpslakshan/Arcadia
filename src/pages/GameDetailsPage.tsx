@@ -1,6 +1,7 @@
 import { fetchGameDetails } from "@/api/games";
 import ExpandableText from "@/components/shared/ExpandableText";
 import GameAttributes from "@/games/GameAttributes";
+import GameScreenshots from "@/games/GameScreenshots";
 import GameTrailer from "@/games/GameTrailer";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
@@ -31,6 +32,7 @@ const GameDetailsPage = () => {
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttributes game={game} />
       <GameTrailer slug={game.slug} />
+      <GameScreenshots slug={game.slug} />
     </div>
   );
 };

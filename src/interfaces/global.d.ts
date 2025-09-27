@@ -109,3 +109,15 @@ interface FetchGameTrailerResponse {
   previous: string | null;
   results: VideoItem[]; // An array of the VideoItem interface
 }
+
+interface ImageResult {
+  image: string;
+  hidden: boolean;
+}
+
+interface FetchScreenshotsResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: ImageResult[];
+}

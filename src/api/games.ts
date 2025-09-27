@@ -26,3 +26,12 @@ export async function fetchGameTrailer(slug: string): Promise<VideoItem[]> {
   const res = await api.get<FetchGameTrailerResponse>(`/games/${slug}/movies`);
   return res.data.results;
 }
+
+export async function fetchGameScreenshots(
+  slug: string
+): Promise<ImageResult[]> {
+  const res = await api.get<FetchScreenshotsResponse>(
+    `/games/${slug}/screenshots`
+  );
+  return res.data.results;
+}
