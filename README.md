@@ -15,6 +15,9 @@ A modern **video game discovery application** that helps you explore and find ga
 - 📊 **Sorting** – Sort by relevance, release date, rating, etc.
 - ♾️ **Infinite Scrolling** – Smooth, endless game browsing
 - 🎥 **Game Details** – Watch trailers and view screenshots
+- ⌛ **Debounced Search** – Optimized search with reduced unnecessary API calls
+- 🗂️ **Caching** – Faster navigation with cached data using TanStack Query
+- 🌗 **Light & Dark Mode** – Seamlessly switch between themes
 - 📱 **Fully Responsive** – Works seamlessly across devices
 
 ---
@@ -24,7 +27,7 @@ A modern **video game discovery application** that helps you explore and find ga
 - [React](https://react.dev/) + [Vite](https://vitejs.dev/) + [Typescript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
 - [Zustand](https://zustand-demo.pmnd.rs/) for state management
-- [TanStack Query](https://tanstack.com/query/latest) for data fetching
+- [TanStack Query](https://tanstack.com/query/latest) for data fetching & caching
 - [React Router](https://reactrouter.com/) for routing
 - [RAWG Video Games Database API](https://rawg.io/apidocs) (v1.0)
 
